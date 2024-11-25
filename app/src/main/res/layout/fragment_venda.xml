@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentVenda"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VendaFragment">
+
+    <Button
+        android:id="@+id/btnListarVend"
+        android:layout_width="88dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="#3F51B5"
+        android:text="@string/btnListar"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvListarVend"
+        app:layout_constraintEnd_toStartOf="@+id/btnSalvarVend"
+        app:layout_constraintStart_toEndOf="@+id/btnEditarVend"
+        app:layout_constraintTop_toBottomOf="@+id/btnSalvarVend" />
+
+    <Button
+        android:id="@+id/btnApagarVend"
+        android:layout_width="95dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#AF0000"
+        android:text="@string/btnApagar"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnEditarVend"
+        app:layout_constraintEnd_toStartOf="@+id/btnEditarVend"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnEditarVend"
+        android:layout_width="88dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="15dp"
+        android:backgroundTint="#FF9800"
+        android:text="@string/btnEditar"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnListarVend"
+        app:layout_constraintEnd_toStartOf="@+id/btnListarVend"
+        app:layout_constraintStart_toEndOf="@+id/btnApagarVend" />
+
+    <Button
+        android:id="@+id/btnSalvarVend"
+        android:layout_width="89dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="4dp"
+        android:backgroundTint="#3F9D43"
+        android:text="@string/btnSalvar"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/btnEditarVend"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnListarVend"
+        app:layout_constraintTop_toTopOf="@+id/btnApagarVend" />
+
+    <EditText
+        android:id="@+id/etTotalVend"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="28dp"
+        android:ems="10"
+        android:hint="@string/totalVenda"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/btnEditarVend"
+        app:layout_constraintEnd_toStartOf="@+id/btnCalcTotal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etQntVend" />
+
+    <Button
+        android:id="@+id/btnCalcTotal"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="36dp"
+        android:backgroundTint="@color/black"
+        android:text="@string/btnCalcTotal"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/etTotalVend"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etTotalVend"
+        app:layout_constraintTop_toTopOf="@+id/etTotalVend" />
+
+    <EditText
+        android:id="@+id/etDataVend"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="15dp"
+        android:ems="10"
+        android:hint="@string/dataVenda"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/etQntVend"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCodVend" />
+
+    <EditText
+        android:id="@+id/etQntVend"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="15dp"
+        android:ems="10"
+        android:hint="@string/qntVenda"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/etTotalVend"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etDataVend" />
+
+    <EditText
+        android:id="@+id/etCodVend"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="15dp"
+        android:ems="10"
+        android:hint="@string/codVenda"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/etDataVend"
+        app:layout_constraintEnd_toStartOf="@+id/btnBuscarVend"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spProdVenda" />
+
+    <Button
+        android:id="@+id/btnBuscarVend"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="36dp"
+        android:backgroundTint="@color/black"
+        android:text="@string/btnBuscar"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/etCodVend"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etCodVend"
+        app:layout_constraintTop_toTopOf="@+id/etCodVend" />
+
+    <TextView
+        android:id="@+id/tvTituloVend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:layout_marginBottom="30dp"
+        android:text="@string/tituloVenda"
+        android:textAlignment="center"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/spProdVenda"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spProdVenda"
+        android:layout_width="338dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/etCodVend"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloVend" />
+
+    <TextView
+        android:id="@+id/tvListarVend"
+        android:layout_width="408dp"
+        android:layout_height="255dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnListarVend" />
+</androidx.constraintlayout.widget.ConstraintLayout>

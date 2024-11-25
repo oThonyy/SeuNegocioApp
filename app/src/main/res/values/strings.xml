@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">SeuNegocioApp</string>
+    <string name="gerenciaProduto">Produtos</string>
+    <string name="vendas">Vendas</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="inicio">App Seu Negócio</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="codProd">Código do Produto</string>
+    <string name="nomeProd">Nome</string>
+    <string name="btnBuscar">Buscar</string>
+    <string name="descProd">Descrição</string>
+    <string name="fornProd">Fornecedor</string>
+    <string name="valProd">Valor Unitário</string>
+    <string name="tituloProd">PRODUTOS</string>
+    <string name="btnSalvar">Salvar</string>
+    <string name="btnListar">Listar</string>
+    <string name="btnEditar">Editar</string>
+    <string name="btnApagar">Apagar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="tituloVenda">VENDAS</string>
+
+    <string name="codVenda">Código da Venda</string>
+    <string name="prodVenda">Selecione o Produto</string>
+    <string name="dataVenda">Data</string>
+    <string name="qntVenda">Quantidade</string>
+    <string name="totalVenda">Total Venda</string>
+
+    <string name="btnCalcTotal">Calcular Total</string>
+
+
+</resources>

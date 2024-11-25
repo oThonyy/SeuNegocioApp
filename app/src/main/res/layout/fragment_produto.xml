@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentProduto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProdutoFragment">
+
+    <EditText
+        android:id="@+id/etCodProduto"
+        android:layout_width="217dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:hint="@string/codProd"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/btnBuscarProd"
+        app:layout_constraintEnd_toStartOf="@+id/btnBuscarProd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnBuscarProd" />
+
+    <Button
+        android:id="@+id/btnBuscarProd"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="@color/black"
+        android:text="@string/btnBuscar"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/etNomeProd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etCodProduto"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloProd" />
+
+    <EditText
+        android:id="@+id/etNomeProd"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="15dp"
+        android:ems="10"
+        android:hint="@string/nomeProd"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/etValProd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBuscarProd" />
+
+    <EditText
+        android:id="@+id/etDescProd"
+        android:layout_width="338dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="23dp"
+        android:ems="10"
+        android:hint="@string/descProd"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/btnApagarProd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btnEditarProd"
+        app:layout_constraintTop_toBottomOf="@+id/etFornProd" />
+
+    <EditText
+        android:id="@+id/etFornProd"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="15dp"
+        android:ems="10"
+        android:hint="@string/fornProd"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/etDescProd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etValProd" />
+
+    <Button
+        android:id="@+id/btnListarProd"
+        android:layout_width="88dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="104dp"
+        android:backgroundTint="#3F51B5"
+        android:text="@string/btnListar"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnEditarProd"
+        app:layout_constraintTop_toBottomOf="@+id/etDescProd" />
+
+    <Button
+        android:id="@+id/btnEditarProd"
+        android:layout_width="88dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="12dp"
+        android:backgroundTint="#FF9800"
+        android:text="@string/btnEditar"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/btnListarProd"
+        app:layout_constraintStart_toEndOf="@+id/btnApagarProd"
+        app:layout_constraintTop_toBottomOf="@+id/etDescProd" />
+
+    <Button
+        android:id="@+id/btnSalvaProd"
+        android:layout_width="89dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="4dp"
+        android:backgroundTint="#3F9D43"
+        android:text="@string/btnSalvar"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etDescProd" />
+
+    <Button
+        android:id="@+id/btnApagarProd"
+        android:layout_width="95dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="12dp"
+        android:backgroundTint="#AF0000"
+        android:text="@string/btnApagar"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnListarProd"
+        app:layout_constraintEnd_toStartOf="@+id/btnEditarProd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etDescProd" />
+
+    <TextView
+        android:id="@+id/tvListarProd"
+        android:layout_width="408dp"
+        android:layout_height="255dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnListarProd" />
+
+    <EditText
+        android:id="@+id/etValProd"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="15dp"
+        android:ems="10"
+        android:hint="@string/valProd"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:textColorHint="@color/black"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/etFornProd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNomeProd" />
+
+    <TextView
+        android:id="@+id/tvTituloProd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="30dp"
+        android:text="@string/tituloProd"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnBuscarProd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
