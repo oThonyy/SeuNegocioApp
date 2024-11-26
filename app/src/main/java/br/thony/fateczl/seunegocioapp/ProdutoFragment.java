@@ -132,11 +132,51 @@ public class ProdutoFragment extends Fragment {
 
     private Produto montaProduto() {
         Produto p = new Produto();
-        p.setCodProd(Integer.parseInt(etCodProduto.getText().toString()));
-        p.setNomeProd(etNomeProduto.getText().toString());
-        p.setValorProd(Float.parseFloat(etValProd.getText().toString()));
-        p.setDescProd(etDescProd.getText().toString());
-        p.setFornProd(etFornProd.getText().toString());
+
+        try {
+            // Validate codProd (integer field)
+            String codProdStr = etCodProduto.getText().toString().trim();
+            if (codProdStr.isEmpty()) {
+                etCodProduto.setError("Código do produto não pode estar vazio");
+                return null;
+            }
+            p.setCodProd(Integer.parseInt(codProdStr));
+        } catch (NumberFormatException e) {
+            etCodProduto.setError("Código do produto inválido");
+            return null; // Abort creation if the value is invalid
+        }
+
+        // Validate nomeProd (string field)
+        String nomeProd = etNomeProduto.getText().toString().trim();
+        if (nomeProd.isEmpty()) {
+            etNomeProduto.setError("Nome do produto não pode estar vazio");
+            return null;
+        }
+        p.setNomeProd(nomeProd);
+
+        try {
+            // Validate valorProd (float field)
+            String valorProdStr = etValProd.getText().toString().trim();
+            if (valorProdStr.isEmpty()) {
+                etValProd.setError("Valor do produto não pode estar vazio");
+                return null;
+            }
+            p.setValorProd(Float.parseFloat(valorProdStr));
+        } catch (NumberFormatException e) {
+            etValProd.setError("Valor do produto inválido");
+            return null;
+        }
+
+        // Validate descProd (optional string field)
+        p.setDescProd(etDescProd.getText().toString().trim());
+
+        // Validate fornProd (string field)
+        String fornProd = etFornProd.getText().toString().trim();
+        if (fornProd.isEmpty()) {
+            etFornProd.setError("Fornecedor não pode estar vazio");
+            return null;
+        }
+        p.setFornProd(fornProd);
 
         return p;
     }

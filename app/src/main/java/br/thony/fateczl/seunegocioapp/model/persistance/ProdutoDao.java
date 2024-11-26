@@ -60,19 +60,41 @@ public class ProdutoDao implements IProdutoDao, ICRUDDao<Produto> {
     public Produto findOne(Produto produto) throws SQLException {
         String sql = "SELECT * FROM produto WHERE codProd = " + produto.getCodProd();
         Cursor cursor = database.rawQuery(sql, null);
-        if (cursor != null) {
-            cursor.moveToFirst();
-        }
-        if (!cursor.isAfterLast()) {
+
+        if (cursor != null && cursor.moveToFirst()) {
+            produto = new Produto();
             produto.setCodProd(cursor.getInt(cursor.getColumnIndex("codProd")));
             produto.setNomeProd(cursor.getString(cursor.getColumnIndex("nomeProd")));
-            produto.setValorProd((float) cursor.getDouble(cursor.getColumnIndex("valorProd")));
+            produto.setValorProd(cursor.getFloat(cursor.getColumnIndex("valorProd")));
             produto.setDescProd(cursor.getString(cursor.getColumnIndex("descProd")));
             produto.setFornProd(cursor.getString(cursor.getColumnIndex("fornProd")));
         }
-        cursor.close();
+
+        if (cursor != null) {
+            cursor.close();
+        }
+
         return produto;
     }
+
+    //    @SuppressLint("Range")
+//    @Override
+//    public Produto findOne(Produto produto) throws SQLException {
+//        String sql = "SELECT * FROM produto WHERE codProd = " + produto.getCodProd();
+//        Cursor cursor = database.rawQuery(sql, null);
+//        if (cursor != null) {
+//            cursor.moveToFirst();
+//        }
+//        if (!cursor.isAfterLast()) {
+//            produto.setCodProd(cursor.getInt(cursor.getColumnIndex("codProd")));
+//            produto.setNomeProd(cursor.getString(cursor.getColumnIndex("nomeProd")));
+//            produto.setValorProd((float) cursor.getDouble(cursor.getColumnIndex("valorProd")));
+//            produto.setDescProd(cursor.getString(cursor.getColumnIndex("descProd")));
+//            produto.setFornProd(cursor.getString(cursor.getColumnIndex("fornProd")));
+//        }
+//        cursor.close();
+//        return produto;
+//    }
 
     @SuppressLint("Range")
     @Override

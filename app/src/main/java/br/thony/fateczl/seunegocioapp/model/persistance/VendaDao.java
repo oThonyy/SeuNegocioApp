@@ -61,7 +61,7 @@ public class VendaDao implements IVendaDao, ICRUDDao<Venda> {
     public Venda findOne(Venda venda) throws SQLException {
         String sql = "SELECT p.nome AS nome_prod, v.*" +
                 "FROM produto p, venda v" +
-                "WHERE p.codProd = v.codProd_produto" +
+                "WHERE p.codProd = v.codProd" +
                 "AND p.codigo = " + venda.getCodVend();
         Cursor cursor = database.rawQuery(sql, null);
         if (cursor != null) {
@@ -86,7 +86,7 @@ public class VendaDao implements IVendaDao, ICRUDDao<Venda> {
         List<Venda> vendas = new ArrayList<>();
         String sql = "SELECT p.nome AS nome_prod, v.* " +
                 "FROM produto p, venda v " +
-                "WHERE p.codProd = v.codProd_produto";
+                "WHERE p.codProd = v.codProd";
         Cursor cursor = database.rawQuery(sql, null);
         if (cursor != null) {
             cursor.moveToFirst();
@@ -114,7 +114,7 @@ public class VendaDao implements IVendaDao, ICRUDDao<Venda> {
         contentValues.put("dataVend", venda.getDataVend());
         contentValues.put("qntProd", venda.getQntVend());
         contentValues.put("totalProd", venda.getTotalVend());
-        contentValues.put("codProd_produto", venda.getProduto().getCodProd());
+        contentValues.put("codProd", venda.getProduto().getCodProd());
 
         return contentValues;
     }
